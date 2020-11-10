@@ -14,7 +14,7 @@ public class MovimientoPlayer : MonoBehaviour
     bool facingRight = true;
     public float moveDirection = 0;
 
-    
+    public bool aire =false;
     public float dir ; 
     public bool isGrounded = false;
     Vector3 cameraPos;
@@ -45,8 +45,9 @@ public class MovimientoPlayer : MonoBehaviour
     {
 
         
+        
         dir = r2d.velocity.x;
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || r2d.velocity.x > 0.01f  ) )
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || r2d.velocity.x != 0.1f ) )
         {
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
             
@@ -60,7 +61,6 @@ public class MovimientoPlayer : MonoBehaviour
             if (isGrounded || r2d.velocity.magnitude < 0.01f)
             {
                 moveDirection = 0;
-                //aire = false;
                
             } 
         }
@@ -83,8 +83,7 @@ public class MovimientoPlayer : MonoBehaviour
         
         if ((Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
-            Debug.Log("aca");
-            //aire = true;
+            
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
         }
 
@@ -100,7 +99,7 @@ public class MovimientoPlayer : MonoBehaviour
         
 
         isGrounded = Physics2D.OverlapCircle(groundCheckPos, 0.23f, layerMask);
-
+        
         
 
         
