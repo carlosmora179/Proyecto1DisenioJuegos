@@ -14,8 +14,7 @@ public class MovimientoPlayer : MonoBehaviour
     bool facingRight = true;
     public float moveDirection = 0;
 
-    public bool aire =false;
-    public float dir ; 
+    public float dir; 
     public bool isGrounded = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
