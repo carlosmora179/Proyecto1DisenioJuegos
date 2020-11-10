@@ -86,7 +86,6 @@ public class MovimientoPlayer : MonoBehaviour
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
         }
 
-        
         if(mainCamera)
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
     }
