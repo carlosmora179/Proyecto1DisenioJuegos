@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlataformaInvisible : MonoBehaviour
+public class ParedInvisible : MonoBehaviour
 {
     public Renderer rend1;
     public Renderer rend2;
     public Renderer rend3;
     public GameObject orbe;
+    public Collider2D coll2d;
 
     private Color color;
-    public Collider2D coll2d;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +23,13 @@ public class PlataformaInvisible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Renderer>().material.color == color)
-        {
-            coll2d.enabled = true;
+        if (collision.GetComponent<Renderer>().material.color == color) {
+            coll2d.enabled = false;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        coll2d.enabled = false;
+        coll2d.enabled = true;
     }
 }
