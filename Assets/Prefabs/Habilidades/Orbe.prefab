@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3915384277797440112}
   - component: {fileID: 3915384277797440113}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Orbe2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3915384277967085959}
   - component: {fileID: 3915384277967085952}
   - component: {fileID: 3915384277967085953}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Orbe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

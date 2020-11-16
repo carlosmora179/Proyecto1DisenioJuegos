@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6554547724652797336}
   - component: {fileID: 6554547724652797339}
   - component: {fileID: 6554547724652797337}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ParedInvisible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6554547724901063480}
   - component: {fileID: 6554547724901063481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bosqueSuelo1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6554547725207865333}
   - component: {fileID: 6554547725207865290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bosqueSuelo1_5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6554547726237435632}
   - component: {fileID: 6554547726237435633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bosqueSuelo1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
