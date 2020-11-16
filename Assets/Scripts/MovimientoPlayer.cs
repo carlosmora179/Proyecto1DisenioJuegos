@@ -23,9 +23,14 @@ public class MovimientoPlayer : MonoBehaviour
     LayerMask layerMask = ~(1 << 2 | 1 << 8);
     Transform t;
 
+    public bool playerState ;
+    bool sameColor = false ;
+    Color actualColor = Color.white;
    
     void Start()
     {
+
+        playerState = GetComponent<colorController>().pintado;
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
@@ -43,7 +48,7 @@ public class MovimientoPlayer : MonoBehaviour
     void Update()
     {
 
-        
+        playerState = GetComponent<colorController>().pintado;
         
         dir = r2d.velocity.x;
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || r2d.velocity.x != 0.1f ) )
@@ -94,12 +99,14 @@ public class MovimientoPlayer : MonoBehaviour
     {
         Bounds colliderBounds = mainCollider.bounds;
         Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, 0.1f, 0);
+        layerMask = (playerState && sameColor) ? ~(1 << 2 | 1 << 8) : ~(1 << 2 | 1 << 8 | 1 << 9);
+        
+        isGrounded = Physics2D.OverlapCircle(groundCheckPos, 0.15f, layerMask);
         
 
-        isGrounded = Physics2D.OverlapCircle(groundCheckPos, 0.23f, layerMask);
         
         
-
+        
         
 
         
@@ -108,4 +115,25 @@ public class MovimientoPlayer : MonoBehaviour
     
         Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, 0.23f, 0), isGrounded ? Color.green : Color.red);
     }
+     private void OnCollisionEnter2D(Collision2D colision) {
+        
+         try
+         {
+             actualColor = colision.gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color;
+         }
+         catch (System.Exception)
+         {
+             
+             //throw;
+         }
+             
+         sameColor = (GetComponent<Renderer>().material.color == actualColor) ? true : false;
+        
+            
+         
+        
+        
+        
+    }
+    
 }
