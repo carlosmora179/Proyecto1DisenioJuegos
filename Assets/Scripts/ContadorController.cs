@@ -14,7 +14,7 @@ public class ContadorController : MonoBehaviour
     void Start()
     {
         counterText = GetComponent<Text>() as Text;
-        player = GameObject.Find("Player1");
+        player = GameObject.Find("player1");
     }
 
     // Update is called once per frame
