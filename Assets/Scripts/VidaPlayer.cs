@@ -7,13 +7,17 @@ public class VidaPlayer : MonoBehaviour
 {
 
 
-    int vidaActual ;
+    public int vidaActual;
+    public bool checkPoint;
+    public Vector3 respawn;
     
 
     // Start is called before the first frame update
     void Awake()
     {
         vidaActual = 10;
+        checkPoint = false;
+        respawn = transform.position;
     }
 
     // Update is called once per frame
@@ -28,5 +32,11 @@ public class VidaPlayer : MonoBehaviour
         vidaActual -= damage;
         Debug.Log(vidaActual);
 
+    }
+
+    private void OnBecameInvisible()
+    {
+        vidaActual--;
+        transform.position = respawn;
     }
 }
