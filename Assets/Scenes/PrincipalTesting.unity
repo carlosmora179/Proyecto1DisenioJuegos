@@ -1808,6 +1808,7 @@ GameObject:
   - component: {fileID: 1737629895}
   - component: {fileID: 1737629896}
   - component: {fileID: 1737629897}
+  - component: {fileID: 1737629898}
   m_Layer: 0
   m_Name: playerProt1
   m_TagString: Untagged
@@ -1863,8 +1864,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.042512298, y: 0.0107604265}
-  m_Size: {x: 0.40208936, y: 1.2123287}
+  m_Offset: {x: -0.0051528215, y: -0.17188513}
+  m_Size: {x: 0.4602039, y: 1.4945996}
   m_Direction: 0
 --- !u!212 &1737629894
 SpriteRenderer:
@@ -1905,7 +1906,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a9f7ae31e309eb54d93ec999f2c1efb9, type: 3}
+  m_Sprite: {fileID: 3707466924236008410, guid: 1f42f8ce6ffb3874f9a111d18e907320,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1929,7 +1931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 3.4
-  jumpHeight: 6.5
+  jumpHeight: 7.5
   gravityScale: 1.5
   mainCamera: {fileID: 519420031}
   moveDirection: 0
@@ -1962,6 +1964,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd8aaf43d769b241ac231915f486406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1737629898
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737629890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f89abc495feda0408bc71c24cb3b0ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6554547725417129514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2122,6 +2143,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970550015597863461, guid: 1a8c91519adb03d44ac09fad5d0d64e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1a67bdfcc54c89419d3093687d9a02d,
+        type: 3}
+    - target: {fileID: 8970550015597863461, guid: 1a8c91519adb03d44ac09fad5d0d64e6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970550015597863461, guid: 1a8c91519adb03d44ac09fad5d0d64e6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970550015597863461, guid: 1a8c91519adb03d44ac09fad5d0d64e6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8970550015597863464, guid: 1a8c91519adb03d44ac09fad5d0d64e6,
         type: 3}
