@@ -7,6 +7,7 @@ public class colorController : MonoBehaviour
     public float cronometro = 0;
     public bool pintado = false;
     Rigidbody2D r2d;
+    bool isGrounded = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,19 @@ public class colorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cronometro <= 0)
+        isGrounded = GetComponent<MovimientoPlayer>().isGrounded;
+        if (cronometro < 1)
         {
+            cronometro = 0f;
             if (pintado)
             {
                 GetComponent<Renderer>().material.color = Color.white;
-                r2d.velocity = new Vector2(r2d.velocity.x, 1f);
+                if(isGrounded){
+
+                    r2d.velocity = new Vector2(r2d.velocity.x, 2f);
+
+                }
+                
                 pintado = false;
             }
         }

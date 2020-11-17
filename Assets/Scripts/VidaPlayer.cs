@@ -6,14 +6,15 @@ using UnityEngine;
 public class VidaPlayer : MonoBehaviour
 {
 
-
-    int vidaActual ;
+    public int maxHealth = 10;
+    public int vidaActual ;
     
+    public HealthBar healthBar;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        vidaActual = 10;
+    void Start() {
+        vidaActual = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        
     }
 
     // Update is called once per frame
@@ -21,12 +22,13 @@ public class VidaPlayer : MonoBehaviour
     {
         if(vidaActual <= 0 ){
 
-            Debug.Log("Muerto");
+            
         }
     }
     public void TakeDamage(int damage){
         vidaActual -= damage;
-        Debug.Log(vidaActual);
+        healthBar.SetHealth(vidaActual);
+        
 
     }
 }

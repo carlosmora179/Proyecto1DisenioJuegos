@@ -6,7 +6,7 @@ using System;
 public class MovimientoPlayer : MonoBehaviour
 {
     
-    public float maxSpeed = 6.8f;
+    public float maxSpeed = 5.5f;
     public float jumpHeight = 15.0f;
     public float gravityScale = 4.5f;
     public Camera mainCamera;
