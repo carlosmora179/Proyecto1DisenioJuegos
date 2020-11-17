@@ -36,7 +36,7 @@ public class VidaPlayer : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        vidaActual--;
+        TakeDamage(1);
         transform.position = respawn;
     }
 }
