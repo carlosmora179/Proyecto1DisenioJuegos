@@ -18,6 +18,6 @@ public class Orbe : MonoBehaviour
     {
         collision.GetComponent<Renderer>().material.color = color;
         collision.GetComponent<colorController>().pintado = true;
-        collision.GetComponent<colorController>().cronometro = 10;
+        collision.GetComponent<colorController>().cronometro = 10f;
     }
 }

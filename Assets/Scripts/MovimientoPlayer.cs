@@ -6,9 +6,9 @@ using System;
 public class MovimientoPlayer : MonoBehaviour
 {
     
-    public float maxSpeed = 3.4f;
-    public float jumpHeight = 6.5f;
-    public float gravityScale = 1.5f;
+    public float maxSpeed = 5.5f;
+    public float jumpHeight = 15.0f;
+    public float gravityScale = 4.5f;
     public Camera mainCamera;
 
     bool facingRight = true;
@@ -26,10 +26,12 @@ public class MovimientoPlayer : MonoBehaviour
     public bool playerState ;
     bool sameColor = false ;
     Color actualColor = Color.white;
+
+    private Animator animplayer;
    
     void Start()
     {
-
+        animplayer = GetComponent<Animator>();
         playerState = GetComponent<colorController>().pintado;
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
@@ -51,11 +53,16 @@ public class MovimientoPlayer : MonoBehaviour
         playerState = GetComponent<colorController>().pintado;
         
         dir = r2d.velocity.x;
+
+        if(moveDirection == 0 ){
+            animplayer.SetBool("Run",false);
+        }
+
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || r2d.velocity.x != 0.1f ) )
         {
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
             
-
+            animplayer.SetBool("Run",true);
             
             //Debug.Log("gire");
             
@@ -105,7 +112,7 @@ public class MovimientoPlayer : MonoBehaviour
         
 
         
-        
+        animplayer.SetBool("Grounded",isGrounded);
         
         
 
