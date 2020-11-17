@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class VidaPlayer : MonoBehaviour
 {
+    public bool checkPoint;
+    public Vector3 respawn;
 
     public int maxHealth = 10;
     public int vidaActual ;
     
     public HealthBar healthBar;
-
     void Start() {
+        checkPoint = false;
+        respawn = transform.position;
         vidaActual = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        
     }
 
     // Update is called once per frame
@@ -30,5 +32,11 @@ public class VidaPlayer : MonoBehaviour
         healthBar.SetHealth(vidaActual);
         
 
+    }
+
+    private void OnBecameInvisible()
+    {
+        vidaActual--;
+        transform.position = respawn;
     }
 }
