@@ -36,7 +36,10 @@ public class VidaPlayer : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        TakeDamage(1);
-        transform.position = respawn;
+        if (Camera.main.transform.position.y > transform.position.y)
+        {
+            TakeDamage(1);
+            transform.position = respawn;
+        }
     }
 }
