@@ -42,11 +42,16 @@ public class VidaPlayer : MonoBehaviour
             if (m_cameraTransform.position.y > transform.position.y)
             {
                 TakeDamage(1);
-                transform.position = respawn;
+                respawnPlayer();
             }
 
 
         }
         
+    }
+
+    public void respawnPlayer()
+    {
+        transform.position = respawn;
     }
 }
