@@ -7,6 +7,7 @@ public class VidaPlayer : MonoBehaviour
 {
     public bool checkPoint;
     public Vector3 respawn;
+    private Transform m_cameraTransform;
 
     public int maxHealth = 10;
     public int vidaActual ;
@@ -17,6 +18,7 @@ public class VidaPlayer : MonoBehaviour
         respawn = transform.position;
         vidaActual = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        m_cameraTransform = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -36,7 +38,10 @@ public class VidaPlayer : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        TakeDamage(1);
-        transform.position = respawn;
+        if (m_cameraTransform.position.y > transform.position.y)
+        {
+            TakeDamage(1);
+            transform.position = respawn;
+        }
     }
 }
