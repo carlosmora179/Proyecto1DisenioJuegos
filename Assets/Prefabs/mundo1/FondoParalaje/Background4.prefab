@@ -292,4 +292,4 @@ MonoBehaviour:
   m_isParallax: 1
   m_isEndless: 1
   m_backgroundWidth: 2.56
-  m_parallaxSpeed: 0.3
+  m_parallaxSpeed: 0.9
