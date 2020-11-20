@@ -12,6 +12,8 @@ public class PlataformaMovible : MonoBehaviour
     private float cronometro;
     private bool salir;
     public Vector3 respawn;
+    Renderer m_Renderer;
+    public GameObject renderCaja ;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class PlataformaMovible : MonoBehaviour
         cronometro = 1;
         salir = false;
         respawn = transform.position;
+        m_Renderer = renderCaja.GetComponent<Renderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -57,6 +60,10 @@ public class PlataformaMovible : MonoBehaviour
                 cronometro -= Time.deltaTime;
             }
         }
+        if (!m_Renderer.isVisible)
+    {
+        Respawn();
+    }
     }
 
     public void Respawn()
@@ -64,12 +71,4 @@ public class PlataformaMovible : MonoBehaviour
         this.transform.position = respawn;
     }
 
-    private void OnBecameInvisible()
-    {
-        if (Camera.main.transform != null)
-        {
-            Debug.Log("entre");
-            Respawn();
-        }
-    }
 }

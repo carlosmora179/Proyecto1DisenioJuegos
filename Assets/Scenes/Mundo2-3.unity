@@ -1217,6 +1217,11 @@ PrefabInstance:
       propertyPath: orbe
       value: 
       objectReference: {fileID: 1238399287}
+    - target: {fileID: 6640793711153434207, guid: 4252567597ad9fb48bf59d53e0ad0f18,
+        type: 3}
+      propertyPath: renderCaja
+      value: 
+      objectReference: {fileID: 2118837893}
     - target: {fileID: 6640793711153434210, guid: 4252567597ad9fb48bf59d53e0ad0f18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1225,7 +1230,7 @@ PrefabInstance:
     - target: {fileID: 6640793711153434210, guid: 4252567597ad9fb48bf59d53e0ad0f18,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6640793711153434210, guid: 4252567597ad9fb48bf59d53e0ad0f18,
         type: 3}
@@ -3445,6 +3450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player1
       objectReference: {fileID: 0}
+    - target: {fileID: 7195479397452883643, guid: ae95384a66ab59745ab606f8f2b8a61d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7195479397452883646, guid: ae95384a66ab59745ab606f8f2b8a61d,
         type: 3}
       propertyPath: mainCamera
@@ -3567,6 +3577,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2118837893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5882980793176710714, guid: 4252567597ad9fb48bf59d53e0ad0f18,
+    type: 3}
+  m_PrefabInstance: {fileID: 624294327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2123179538
 GameObject:
   m_ObjectHideFlags: 0
