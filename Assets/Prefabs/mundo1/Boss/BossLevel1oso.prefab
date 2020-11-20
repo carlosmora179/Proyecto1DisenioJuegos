@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 482860153559654657}
   - component: {fileID: 482860153559654658}
   - component: {fileID: 482860153559654686}
+  - component: {fileID: 14439627040130319}
   m_Layer: 10
   m_Name: BossLevel1oso
   m_TagString: Untagged
@@ -153,3 +154,15 @@ MonoBehaviour:
   rockPrefab: {fileID: 4164077129876694167, guid: afbead0cb13cfb347a6275b875df586d,
     type: 3}
   attackSpeed: 2
+--- !u!114 &14439627040130319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482860153559654660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7937e0adcb853b4788ef84c923605a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -7,13 +7,14 @@ public class Mina : MonoBehaviour
     // Start is called before the first frame update
     public int damage = 5;
 
-    [SerializeField] GameObject player ;
+    GameObject player ;
     [SerializeField] GameObject orbe;
     [SerializeField] Renderer rend1;
     private Color color;
     
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         color = orbe.GetComponent<Orbe>().color;
         rend1.material.color = color;
     }
