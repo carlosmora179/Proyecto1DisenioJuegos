@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     public float visionAttackRadius,meleeRange;
     public GameObject player;
     Vector3 initialPosition, target;
+    bool facingLeft = true;
+
+    Animator anim;
 
 
     [Tooltip("Prefab de la roca que se disparará")]
@@ -17,7 +20,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         initialPosition = transform.position;
     }
@@ -25,7 +28,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //
         target = initialPosition;
 
         RaycastHit2D hit = Physics2D.Raycast(
@@ -42,22 +45,46 @@ public class Enemy : MonoBehaviour
                 target = player.transform.position;
             }
         }
+       
+
+        if(player.transform.position.x<transform.position.x && !facingLeft){
+            
+            facingLeft = true;
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            
+        }
+        if(player.transform.position.x>transform.position.x &&facingLeft){
+            facingLeft = false;
+
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            
+            
+
+        }
 
         float distance = Vector3.Distance(target, transform.position);
         
 
 
         if (!melee && target != initialPosition && distance < visionAttackRadius){
-
+            anim.SetBool("Attack",true);
             if (!attacking) StartCoroutine(Attack(attackSpeed));
+
+            
 
         }
         if(target != initialPosition && distance < meleeRange){
             melee = true;
+            anim.SetBool("Attack",false);
+        }
+        if(distance>visionAttackRadius){
+            anim.SetBool("Attack",false);
         }
         else{
             melee = false;
+            
         }
+        
         Debug.DrawLine(transform.position, target, Color.green);
     }
 
@@ -68,6 +95,7 @@ public class Enemy : MonoBehaviour
             Instantiate(rockPrefab, transform.position, transform.rotation);
             // Esperamos los segundos de turno antes de hacer otro ataque
             yield return new WaitForSeconds(seconds);
+            
         }
         attacking = false; // Desactivamos la bandera
     }
