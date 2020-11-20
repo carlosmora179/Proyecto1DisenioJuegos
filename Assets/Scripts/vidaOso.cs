@@ -8,6 +8,7 @@ public class vidaOso : MonoBehaviour
 
     public  int maxHealth = 100;
     int currentHealth;
+    
      // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class vidaOso : MonoBehaviour
     }
     public void TakeDamage(int damage){
         currentHealth -= damage;
-
+        GetComponent<Boss1Movement>().Mover();
         if(currentHealth <=0){
             Die();
         }
