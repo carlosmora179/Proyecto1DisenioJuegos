@@ -16,8 +16,13 @@ public class Orbe : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<Renderer>().material.color = color;
-        collision.GetComponent<colorController>().pintado = true;
-        collision.GetComponent<colorController>().cronometro = 10f;
+        if(collision.transform.tag == "Player"){
+
+            collision.GetComponent<Renderer>().material.color = color;
+            collision.GetComponent<colorController>().pintado = true;
+            collision.GetComponent<colorController>().cronometro = 10f;
+
+
+        }
     }
 }
