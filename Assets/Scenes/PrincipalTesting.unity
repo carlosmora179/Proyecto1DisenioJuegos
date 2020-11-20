@@ -2075,6 +2075,7 @@ GameObject:
   - component: {fileID: 765927371}
   - component: {fileID: 765927375}
   - component: {fileID: 765927372}
+  - component: {fileID: 765927376}
   m_Layer: 10
   m_Name: oso2
   m_TagString: Untagged
@@ -2196,6 +2197,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &765927376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765927370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee4c5bb3320b714a8451e7b4915824a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionAttackRadius: 6.5
+  meleeRange: 2.3
+  player: {fileID: 0}
+  rockPrefab: {fileID: 4164077129876694167, guid: afbead0cb13cfb347a6275b875df586d,
+    type: 3}
+  attackSpeed: 2
 --- !u!1 &766203108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,6 +2609,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2442512102192029866, guid: ae95384a66ab59745ab606f8f2b8a61d,
+        type: 3}
+      propertyPath: attackRate
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7195479397452883640, guid: ae95384a66ab59745ab606f8f2b8a61d,
         type: 3}
       propertyPath: healthBar
@@ -2654,6 +2678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195479397452883643, guid: ae95384a66ab59745ab606f8f2b8a61d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7195479397452883646, guid: ae95384a66ab59745ab606f8f2b8a61d,
         type: 3}

@@ -26,7 +26,7 @@ public class Mina : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Renderer>().material.color != color)
+        if (collision.GetComponent<Renderer>().material.color != color && collision.transform.tag == "Player")
         {
             player.GetComponent<VidaPlayer>().TakeDamage(damage);
             player.GetComponent<VidaPlayer>().respawnPlayer();
