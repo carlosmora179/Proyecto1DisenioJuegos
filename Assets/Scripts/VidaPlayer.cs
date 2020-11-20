@@ -8,7 +8,7 @@ public class VidaPlayer : MonoBehaviour
     public bool checkPoint;
     public Vector3 respawn;
     private Transform m_cameraTransform;
-    private PlataformaMovible[] plataformas;
+    private CajaMovible[] plataformas;
     public int maxHealth = 10;
     public int vidaActual ;
     
@@ -19,7 +19,7 @@ public class VidaPlayer : MonoBehaviour
         vidaActual = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         m_cameraTransform = Camera.main.transform;
-        plataformas = FindObjectsOfType<PlataformaMovible>();
+        plataformas = FindObjectsOfType<CajaMovible>();
     }
 
     public void TakeDamage(int damage){
@@ -45,7 +45,7 @@ public class VidaPlayer : MonoBehaviour
 
     public void respawnPlayer()
     {
-        foreach (PlataformaMovible platform in plataformas)
+        foreach (CajaMovible platform in plataformas)
         {
             platform.Respawn();
         }

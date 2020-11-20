@@ -3,26 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlataformaMovible : MonoBehaviour
+public class CajaMovible : MonoBehaviour
 {
-    public Renderer rend;
     public Rigidbody2D rb2;
     public GameObject orbe;
     private Color color;
     private float cronometro;
     private bool salir;
     public Vector3 respawn;
-    
+    private float verificadorEjeY;
 
     // Start is called before the first frame update
     void Start()
     {
         color = orbe.GetComponent<Orbe>().color;
-        rend.material.color = color;
+        GetComponent<Renderer>().material.color = color;
         cronometro = 1;
         salir = false;
         respawn = transform.position;
-        
+        verificadorEjeY = GameObject.FindGameObjectWithTag("Respawn").transform.position.y;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,9 +40,8 @@ public class PlataformaMovible : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         salir = true;
-        
     }
-
+    
     private void Update()
     {
         if (salir)
@@ -59,11 +57,18 @@ public class PlataformaMovible : MonoBehaviour
                 cronometro -= Time.deltaTime;
             }
         }
-      
     }
 
     public void Respawn()
     {
         this.transform.position = respawn;
+    }
+
+    public void OnBecameInvisible()
+    {
+        if (verificadorEjeY > this.transform.position.y)
+        {
+            Respawn();
+        }
     }
 }
