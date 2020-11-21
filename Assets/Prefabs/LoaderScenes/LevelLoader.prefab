@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7549193906666738707}
   m_Layer: 0
   m_Name: LevelLoader
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 5567667429818601786}
+  canva: {fileID: 0}
+  gameOver: {fileID: 0}
   transitionTime: 1
 --- !u!1 &5166090310113668482
 GameObject:

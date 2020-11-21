@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class VidaPlayer : MonoBehaviour
 {
     public bool checkPoint;
@@ -11,6 +12,10 @@ public class VidaPlayer : MonoBehaviour
     private CajaMovible[] plataformas;
     public int maxHealth = 10;
     public int vidaActual ;
+
+    
+    [Tooltip("controlador del mundor")]
+    GameObject levelcontrol;
     
     public HealthBar healthBar;
     void Start() {
@@ -20,6 +25,14 @@ public class VidaPlayer : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         m_cameraTransform = Camera.main.transform;
         plataformas = FindObjectsOfType<CajaMovible>();
+        levelcontrol = GameObject.FindGameObjectWithTag("GameController");
+    }
+
+    private void Update() {
+        if(vidaActual <= 0){
+            levelcontrol.GetComponent<LevelLoader>().GameOver();
+
+        }
     }
 
     public void TakeDamage(int damage){

@@ -65,6 +65,10 @@ public class Enemy : MonoBehaviour
         float distance = Vector3.Distance(target, transform.position);
         
 
+        if(target != initialPosition && distance < meleeRange){
+            melee = true;
+            anim.SetBool("Attack",false);
+        }
 
         if (!melee && target != initialPosition && distance < visionAttackRadius){
             anim.SetBool("Attack",true);
@@ -72,10 +76,6 @@ public class Enemy : MonoBehaviour
 
             
 
-        }
-        if(target != initialPosition && distance < meleeRange){
-            melee = true;
-            anim.SetBool("Attack",false);
         }
         if(distance>visionAttackRadius){
             anim.SetBool("Attack",false);
