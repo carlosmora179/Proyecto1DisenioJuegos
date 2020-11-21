@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Boss2IA : MonoBehaviour
 {
     public float visionAttackRadius,meleeRange;
     public GameObject player;
@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
 
     [Tooltip("Prefab de la roca que se disparará")]
-    public GameObject rockPrefab;
+    public GameObject firePrefab;
     [Tooltip("Velocidad de ataque (segundos entre ataques)")]
     public float attackSpeed = 2f;
     bool attacking,melee;
@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         initialPosition = transform.position;
+        melee = false;
     }
 
     // Update is called once per frame
@@ -50,13 +51,13 @@ public class Enemy : MonoBehaviour
         if(player.transform.position.x<transform.position.x && !facingLeft){
             
             facingLeft = true;
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             
         }
         if(player.transform.position.x>transform.position.x &&facingLeft){
             facingLeft = false;
 
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             
             
 
@@ -64,11 +65,12 @@ public class Enemy : MonoBehaviour
 
         float distance = Vector3.Distance(target, transform.position);
         
-
+    
         if(target != initialPosition && distance < meleeRange){
             melee = true;
             anim.SetBool("Attack",false);
         }
+        
 
         if (!melee && target != initialPosition && distance < visionAttackRadius){
             anim.SetBool("Attack",true);
@@ -77,6 +79,8 @@ public class Enemy : MonoBehaviour
             
 
         }
+        //Debug.Log("Distancia> "+distance+ "rango> "+meleeRange);
+        Debug.Log(melee);
         if(distance>visionAttackRadius){
             anim.SetBool("Attack",false);
         }
@@ -91,8 +95,8 @@ public class Enemy : MonoBehaviour
     IEnumerator Attack(float seconds){
         attacking = true;  // Activamos la bandera
         // Si tenemos objetivo y el prefab es correcto creamos la roca
-        if (target != initialPosition && rockPrefab != null) {
-            Instantiate(rockPrefab, transform.position, transform.rotation);
+        if (target != initialPosition && firePrefab != null) {
+            Instantiate(firePrefab, transform.position, transform.rotation);
             // Esperamos los segundos de turno antes de hacer otro ataque
             yield return new WaitForSeconds(seconds);
             
@@ -109,3 +113,4 @@ public class Enemy : MonoBehaviour
 
 
 }
+

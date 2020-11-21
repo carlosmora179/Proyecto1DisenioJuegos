@@ -61,13 +61,15 @@ public class CajaMovible : MonoBehaviour
 
     public void Respawn()
     {
+        Debug.Log("Respawn");
         this.transform.position = respawn;
     }
 
     public void OnBecameInvisible()
-    {
+    {Debug.Log("entre>"+ verificadorEjeY + " >"+this.transform.position.y );
         if (verificadorEjeY > this.transform.position.y)
         {
+            
             Respawn();
         }
     }
