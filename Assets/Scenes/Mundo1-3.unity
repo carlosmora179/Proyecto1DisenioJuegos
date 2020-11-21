@@ -7723,5 +7723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLevel1oso
       objectReference: {fileID: 0}
+    - target: {fileID: 482860153559654660, guid: 427833ed4b626814eb2a9663e5136440,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427833ed4b626814eb2a9663e5136440, type: 3}
