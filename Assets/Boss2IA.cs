@@ -7,7 +7,7 @@ public class Boss2IA : MonoBehaviour
     public float visionAttackRadius,meleeRange;
     public GameObject player;
     Vector3 initialPosition, target;
-    bool facingLeft = true;
+    bool facingLeft = false;
 
     Animator anim;
 

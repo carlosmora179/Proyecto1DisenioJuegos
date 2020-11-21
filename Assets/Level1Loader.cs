@@ -10,12 +10,21 @@ public class Level1Loader : MonoBehaviour
     public Animator transition;
 
     public float transitionTime = 2f;
+
+ 
     
 
      public void LoadLevel1(){
 
+        if(SceneManager.GetActiveScene().buildIndex == 7){
+            StartCoroutine(LoadLevel(0));
+
+        }
+        else{
+
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        }
         
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
          
 
 

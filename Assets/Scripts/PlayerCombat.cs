@@ -36,6 +36,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("hit entitie " + enemy.name);
+
             enemy.GetComponent<vidaOso>().TakeDamage(attackDamage);
         }
 
@@ -46,4 +47,5 @@ public class PlayerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position,attackRange);
         
     }
+    
 }

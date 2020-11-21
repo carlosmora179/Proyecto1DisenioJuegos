@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mundo2-3.unity
     guid: ed2ea8d585ba139448d21d78c7b1110e
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 8420da0b1baabe341b3f06e7e54421c8
   m_configObjects: {}

@@ -27,6 +27,7 @@ public class Boss1Movement : MonoBehaviour
 
         humoGO = Instantiate(humo, humoCheck.transform.position, transform.rotation);
         Destroy(humoGO,1);
+        
 
         this.transform.position = Spawn1.transform.position;
     }
