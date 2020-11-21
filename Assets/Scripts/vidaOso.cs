@@ -8,11 +8,13 @@ public class vidaOso : MonoBehaviour
 
     public  int maxHealth = 100;
     int currentHealth;
+    GameObject final;
     
      // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        final = GameObject.FindGameObjectWithTag("Finish");
     }
     public void TakeDamage(int damage){
         currentHealth -= damage;
@@ -22,9 +24,12 @@ public class vidaOso : MonoBehaviour
         }
     }
     void Die(){
-        Debug.Log("Oso Morido");
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+
+        final.GetComponent<Level1Loader>().LoadLevel1();
+        Destroy(GameObject.FindWithTag("Boss"));
+        //GetComponent<Collider2D>().enabled = false;
+        //this.enabled = false;
+        
     }
    
 }
